@@ -40,10 +40,10 @@ public class RecruitmentBoard extends Board {
     @NotNull
     private String recruitmentAddressDetail;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "recruitmentBoard")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "recruitmentBoard", cascade = CascadeType.REMOVE)
     private List<RecruitmentFile> recruitmentFiles;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "recruitmentBoard")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "recruitmentBoard", cascade = CascadeType.REMOVE)
     private List<RecruitmentReply> recruitmentReplies;
 
     @ManyToOne(fetch = FetchType.LAZY)

@@ -166,6 +166,11 @@ public class BoardRepositoryTests {
         freeBoardRepository.findFreeBoardListByMemberId_QueryDSL(PageRequest.of(0,5), 5L).stream().map(FreeBoard::toString).forEach(log::info);
     }
 
+    @Test
+    public void deleteTest(){
+        recruitmentBoardRepository.findById(323L).ifPresent(recruitmentBoard -> recruitmentBoardRepository.delete(recruitmentBoard));
+    }
+
 //    @Test
 //    public void findAllWithSearchTest(){
 //        ProductSearch productSearch = new ProductSearch();

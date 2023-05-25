@@ -779,7 +779,7 @@ a.Mint {
 }
 
 .lecture{
-    margin-bottom: 23px;
+    /* margin-bottom: 23px; */
     border: 1px solid #e4e4e4;
     background: #fff;
     width: 570px;
@@ -798,7 +798,7 @@ span.toastui-calendar-grid-cell-date span.toastui-calendar-weekday-grid-date-dec
 }
 
 .lecture-image{
-    background-image: url("https://cdn.wadiz.kr/ft/images/green001/2023/0313/20230313133752303_null.jpg/wadiz/thumbnail/253/format/jpg/quality/95/") ;
+    /* background-image: url("https://cdn.wadiz.kr/ft/images/green001/2023/0313/20230313133752303_null.jpg/wadiz/thumbnail/253/format/jpg/quality/95/") ; */
     transform: scale(1);
     opacity: 1;
     display: inline-block;
@@ -806,8 +806,10 @@ span.toastui-calendar-grid-cell-date span.toastui-calendar-weekday-grid-date-dec
 }
 
 .lecture-image img{
-    width: 100%;
-    height: 100%;
+    /* width: 100%; */
+    /* height: 100%; */
+    width: 180px;
+    height: 180px;
 }
 
 .lecture .lecture-wrapper{
@@ -904,6 +906,7 @@ span.toastui-calendar-grid-cell-date span.toastui-calendar-weekday-grid-date-dec
 
 .lecture-wrap{
     display: flex;
+    height: 180px;
 }
 
 .children-table{
@@ -1024,5 +1027,5 @@ tr:last-child td {
 }
 
 .lecture {
-    margin-left: 21px;
+    /* margin-left: 21px; */
 }

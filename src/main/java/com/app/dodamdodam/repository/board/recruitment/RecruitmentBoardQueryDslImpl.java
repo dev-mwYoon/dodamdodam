@@ -165,7 +165,7 @@ public class RecruitmentBoardQueryDslImpl implements RecruitmentBoardQueryDsl {
     /* 내가 참가한 모집 날짜로 검색 */
     @Override
     public List<RecruitmentBoard> findRecruitmentBoardListByMemberIdAndDate_QueryDSL(Long memberId, LocalDate recruitmentDate) {
-        List<RecruitmentBoard> recruitmentBoards = query.select(recruitmentBoard).from(recruitmentBoard)
+        List<RecruitmentBoard> recruitmentBoards = query.select(recruitmentBoard).distinct().from(recruitmentBoard)
                 .where(recruitmentBoard.recruitments.any().member.id.eq(memberId).and(recruitmentBoard.recruitmentDate.eq(recruitmentDate)))
                 .leftJoin(recruitmentBoard.recruitmentFiles).fetchJoin()
                 .join(recruitmentBoard.member).fetchJoin()

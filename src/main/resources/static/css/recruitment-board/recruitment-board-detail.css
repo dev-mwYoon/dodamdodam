@@ -200,7 +200,7 @@ dd span{
 }
 
 .recruitment-detail-container img{
-    width: 800px;
+    width: 600px;
     display: block;
     vertical-align: top;
     margin: 0px auto;
@@ -354,8 +354,12 @@ input{
 
 .modal{
     margin-top:80px;
-    margin-left:2px;
+    /* margin-left:2px; */
     width:245px;
+    position: relative;
+    left: -16px;
+    bottom: 44px;
+    width: calc(100% + 31.4px);
 }
 
 

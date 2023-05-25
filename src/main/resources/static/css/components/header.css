@@ -128,7 +128,7 @@ body {
 } */
 
 body {
-	overflow-y: scroll; /* 내용이 넘칠때 어떻게 보여줄지 지정 */
+    overflow-y: scroll; /* 내용이 넘칠때 어떻게 보여줄지 지정 */
     line-height: 1.5em;
     letter-spacing: -.02em;
     color: rgba(0,0,0,.84);
@@ -156,7 +156,7 @@ a, div, header, h1, span, ul, form, input {
     box-sizing: border-box;
 }
 div, h1 {
-	margin: 0;
+    margin: 0;
     padding: 0;
 }
 div {
@@ -177,7 +177,7 @@ button {
     background: none;
     color: inherit;
 }
-body, body button, body input, body li, 
+body, body button, body input, body li,
 body ol, body select, body textarea, body ul {
     box-sizing: border-box;
     margin: 0;
@@ -185,7 +185,7 @@ body ol, body select, body textarea, body ul {
     padding: 0;
 }
 .web-header {
-       position: relative;
+    position: relative;
     position: -webkit-sticky;
     position: sticky;
     top: 0;
@@ -361,7 +361,7 @@ svg:not(:root) {
     pointer-events: visible;
 }
 .withIcon_icon__20lDO { /* 검색버튼 돋보기 모양 */
-   	display: block;
+    display: block;
     transform: scale(1);
     transition: transform .3s ease-out;
     width: 1em;
@@ -443,7 +443,7 @@ svg:not(:root) {
 }
 
 input::placeholder {
-	color: #adb5bd;
+    color: #adb5bd;
 }
 
 
@@ -456,53 +456,65 @@ input::placeholder {
 
 /* 헤더 반응형 */
 @media screen and (min-width: 1097px){
-	.web-header {
-	    position: static;
-	}
+    .web-header {
+        position: static;
+    }
 }
 
 @media screen and (min-width: 1097px){
-	.web-header .header-wrapper {
-	    position: relative;
-	    border-bottom: 1px solid #f0f2f5;
-	    padding: 0;
-	    height: 56px;
-	    text-align: left;
-	}
+    .web-header .header-wrapper {
+        position: relative;
+        border-bottom: 1px solid #f0f2f5;
+        padding: 0;
+        height: 56px;
+        text-align: left;
+    }
 }
 @media screen and (min-width: 1097px){
-	.web-header .header-wrapper .header-container {
-	    padding: 0 80px;
-	}
+    .web-header .header-wrapper .header-container {
+        padding: 0 80px;
+    }
 }
 @media screen and (min-width: 1097px){
-	.web-header .wadiz-logo {
-	    position: static;
-	}
+    .web-header .wadiz-logo {
+        position: static;
+    }
 }
 @media screen and (min-width: 1097px){
-	.web-header .wadiz-logo>a {
-	    padding: 14px 0 18px;
-	}
+    .web-header .wadiz-logo>a {
+        padding: 14px 0 18px;
+    }
 }
 @media screen and (min-width: 1097px){
-	.web-header .web-header-utils { /* 헤더 검색창, 로그인, 회원가입, 프로젝트 만들기 div */
-	    display: flex;
-	    position: relative;
-	    margin-left: auto;
-	}
+    .web-header .web-header-utils { /* 헤더 검색창, 로그인, 회원가입, 프로젝트 만들기 div */
+        display: flex;
+        position: relative;
+        margin-left: auto;
+    }
 }
 @media screen and (min-width: 1360px){
-	.header-search-div { /* 헤더 검색창 div */
-	    min-width: 360px;
-	}
+    .header-search-div { /* 헤더 검색창 div */
+        min-width: 360px;
+    }
 }
 @media screen and (min-width: 1097px){
-	.header-search-index-div { /* 헤더 검색창 div 내의 div */
-	    border: 1px solid #00c4c4;
-	}
+    .header-search-index-div { /* 헤더 검색창 div 내의 div */
+        border: 1px solid #00c4c4;
+    }
 }
 
 .user-text{
-    margin-top: 15px;
+    /* margin-top: 15px; */
+    line-height: 25px;
+    letter-spacing: -.6px;
+    font-size: 17px;
+    font-weight: 500;
+    position: relative;
+    transition: .2s;
+    cursor: pointer;
+    padding: 14px 0px;
+    padding-left: 3px;
+    padding-right: 10px;
+    text-align: center;
+    color: #0000008f;
 }

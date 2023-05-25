@@ -174,10 +174,11 @@ public class RecruitmentBoardServiceImpl implements RecruitmentBoardService {
         log.info("boardId :" + boardId);
         log.info("memberId :" + memberId);
 
-        Optional<Member> memberOptional = memberRepository.findById(boardId);
+        Optional<Member> memberOptional = memberRepository.findById(memberId);
         Member member = memberOptional.get();
+        member.setParticipationCountPlus();
 
-        Optional<RecruitmentBoard> recruitmentBoardOptional = recruitmentBoardRepository.findById(memberId);
+        Optional<RecruitmentBoard> recruitmentBoardOptional = recruitmentBoardRepository.findById(boardId);
         RecruitmentBoard recruitmentBoard = recruitmentBoardOptional.get();
 
 //        if(recruitmentBoardOptional.isPresent()){
