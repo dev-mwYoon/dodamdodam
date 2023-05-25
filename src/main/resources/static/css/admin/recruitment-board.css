@@ -11,15 +11,15 @@
 }
 
 .views{
-    width: 10% !important;
+    width: 20% !important;
 }
 
 .like-count{
-    width: 10% !important;
+    width: 15% !important;
 }
 
 .register-time{
-    width: 30% !important;
+    width: 10% !important;
 }
 
 /* .detail-top{
@@ -35,4 +35,4 @@ td {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-  }
+}

@@ -411,7 +411,7 @@ $(document).ready(function () {
               <span><i class="reward" style='background: #006633;'></i>참여</span>
             </p>
             <p class="lecture-title">
-              ${result[i].recruitmentSubtitle}
+              ${result[i].boardTitle}
             </p>
             <p class="lecture-info">
               모집일 : ${result[i].recruitmentDate}

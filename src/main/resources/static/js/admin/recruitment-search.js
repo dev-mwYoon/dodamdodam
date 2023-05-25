@@ -113,6 +113,16 @@ function showList(data) {
     console.log("showList 들어옴");
     let recruitmentBoards = data.content;
     recruitmentBoards.forEach(recruitmentBoard => {
+        let status = recruitmentBoard.recruitmentStatus;
+        if(status == "APPLYING"){
+            status = "모집중";
+        } else if(status == "COMPLETE"){
+            status = "모집완료";
+        } else if(status == "REJECT"){
+            status = "승인대기";
+        } else {
+            status = "모집중";
+        }
         // const formattedDate = formatDate(new Date(inquiry.parentsBoardRegisterDate));
         console.log("text 들어옴");
         var text = "";
@@ -133,7 +143,7 @@ function showList(data) {
                 <td onclick="redirectToDetail(${recruitmentBoard.id})">${recruitmentBoard.memberDTO.memberName}</td>
                 <td onclick="redirectToDetail(${recruitmentBoard.id})">${recruitmentBoard.recruitmentAddress}</td>
                 <td onclick="redirectToDetail(${recruitmentBoard.id})">${recruitmentBoard.recruitmentDate}</td>
-                <td onclick="redirectToDetail(${recruitmentBoard.id})">${recruitmentBoard.recruitmentStatus}</td>
+                <td onclick="redirectToDetail(${recruitmentBoard.id})">${status}</td>
             </tr>
     `;
         $listResults.append(text);

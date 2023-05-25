@@ -106,7 +106,7 @@
                         </div>
                     </div>
                     <div class="my-board">
-                        <button class="btn list"><a href="/recruitment/list">목록</a></button>
+                        <button class="btn list" onclick="location.href='/recruitment/list'"><a>목록</a></button>
                         <button class="btn" th:attr="data-id=${boardDetail.id}" onclick="location.href = '/recruitment/update/' + this.getAttribute('data-id')">
                             <a>수정</a>
                         </button>
@@ -403,6 +403,18 @@
             /* 추가한 내용 화면에 뿌려주기 */
             $(".comment-list-wrapper").append(text);
         }
+        /* 추가한 코드 */
+        let countReply = $('#reply-count').text();
+        let replyCount = $(".comment-list-wrapper .comment-list").length;
+
+        console.log(countReply);
+        console.log(replyCount);
+        if (countReply == replyCount){
+            $('#show-more-btn').hide();
+        } else {
+            $('#show-more-btn').show();
+        }
+        /* 추가한 코드 */
     }
 </script>
 <script>
