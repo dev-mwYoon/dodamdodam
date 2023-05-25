@@ -127,6 +127,8 @@ body{
     text-align: right;
     margin: 0;
     line-height: 3;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 
