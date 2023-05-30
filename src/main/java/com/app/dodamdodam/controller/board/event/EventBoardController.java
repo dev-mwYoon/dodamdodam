@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
 import javax.servlet.http.HttpSession;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 @Controller
@@ -55,9 +57,29 @@ public class EventBoardController {
     /* 상세페이지 */
     @GetMapping("detail/{eventBoardId}")
     public String goToDetail(Model model/*, @AuthenticationPrincipal UserDetail userDetail*/, @PathVariable("eventBoardId") Long eventBoardId) {
+        log.info("상세들어옴@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
         EventBoardDTO eventBoardDTO = eventBoardService.getDetail(eventBoardId);
+        LocalDate currentDate = LocalDate.now();
+        /* 이벤트 종료날짜와 현재날짜 비교 */
+        long endDays = ChronoUnit.DAYS.between(currentDate, eventBoardDTO.getEventEndDate());
+        
+        /* 이벤트 종료 날짜가 이미 지났으면 못들어가게 막아주기 위해 다시 컨트롤러 태움 */
+        if (endDays < 0) {
+            return "redirect:/event/past?check=true";
+        }
+
+        /* D-day 구하기 현재 날짜와 event 종료 or 시작 날짜 둘중 하나 정해서 그 차이로 d-day 구해서 모델로 화면에 쏴주기 */
+        long daysBetween = ChronoUnit.DAYS.between(currentDate, eventBoardDTO.getEventStartDate());
+
+        log.info(daysBetween + " <- 남은 날짜@@@@@@@@@@@@@@@@@@@@@@@@@@");
         model.addAttribute("eventBoardDTO", eventBoardDTO);
         return "event-board/event-board-detail";
+    }
+    /*이미 지난 이벤트 들어왔을때 모달 띄우고 나가기*/
+    @GetMapping("past")
+    public String pastEvent(){
+        log.info("이미 지난 이벤트 들어옴@@@@@@@@@@@@@@@@@@@@");
+        return "event-board/event-board-detail-past";
     }
 
     /* 이벤트 게시판 상세보기 */
