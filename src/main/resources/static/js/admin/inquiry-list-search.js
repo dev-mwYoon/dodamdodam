@@ -114,6 +114,14 @@ function showList(data) {
     let inquiryDTOS = data.content;
     inquiryDTOS.forEach(inquiry => {
         // const formattedDate = formatDate(new Date(inquiry.parentsBoardRegisterDate));
+        let status = inquiry.inquiryStatus;
+        if(status == "HOLD"){
+            status = "답변대기중";
+        } else if(status == "DONE"){
+            status = "답변완료";
+        } else {
+            status = "답변대기중";
+        }
         console.log("text 들어옴");
         var text = "";
         text += `
@@ -131,7 +139,7 @@ function showList(data) {
         <td onclick="redirectToDetail(${inquiry.id})">${inquiry.inquiryContent}</td>
         <td onclick="redirectToDetail(${inquiry.id})">${inquiry.inquiryEmail}</td>
         <td onclick="redirectToDetail(${inquiry.id})">${inquiry.inquiryPhoneNumber}</td>
-        <td onclick="redirectToDetail(${inquiry.id})">${inquiry.inquiryStatus}</td>
+        <td onclick="redirectToDetail(${inquiry.id})">${status}</td>
       </tr>
     `;
         $listResults.append(text);
@@ -160,7 +168,7 @@ $(document).ready(function() {
 
         // 선택된 항목이 없는 경우 경고창을 표시하고 함수를 종료
         if (selectedItems.length === 0) {
-            alert('삭제할 항목을 선택해주세요.');
+            // alert('삭제할 항목을 선택해주세요.');
             return;
         }
         $('#delete-modal').show(); //삭제 모달창 열기
@@ -175,7 +183,7 @@ $(document).ready(function() {
                     location.reload() //삭제완료 후 새로고침
                 },
                 error: function (xhr, status, error) {
-                    alert('오류가 발생했습니다. 다시 시도해주세요.');
+                    // alert('오류가 발생했습니다. 다시 시도해주세요.');
                     console.log(error);
                 }
             });

@@ -29,6 +29,14 @@ function showModal(memberId) {
 }
 
 function showDetail(member) {
+    let status = member.memberDTO.memberStatus;
+    if(status == "NORMAL"){
+        status = "일반 회원";
+    } else if(status == "WITHDRAWAL"){
+        status = "탈퇴 회원";
+    } else {
+        status = "일반 회원";
+    }
     var text = "";
     console.log("showdetail");
     text += `
@@ -66,7 +74,7 @@ function showDetail(member) {
                             </div>
                             <div class="info-row">
                                 <div class="info-label">회원유형:</div>
-                                <div class="info-value">${member.memberDTO.memberStatus}</div>
+                                <div class="info-value">${status}</div>
                             </div>
                         </div>
                     </div>

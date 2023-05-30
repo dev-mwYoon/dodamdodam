@@ -48,10 +48,13 @@
     --no-select-color: #bee4d18c;
     --main-semi-color: #00663396;
     /* #10837694 */
-    --banner1-color: rgb(64, 64, 204);
+    /*--banner1-color: rgb(64, 64, 204);*/
+    --banner1-color: rgb(31 62 26);
+
     --banner2-color: rgb(16, 62, 104);
-    --banner3-color: rgb(95, 173, 5);
-    
+    /*--banner3-color: rgb(95, 173, 5);*/
+    --banner3-color: rgb(241 171 62);;
+
 }
 
 * {
@@ -1139,7 +1142,7 @@ div.banner div {
 .main_banner_button_bar {
     position: absolute;
     right: 0px;
-    bottom: 15px;
+    bottom: 5px;
     z-index: 2;
     display: flex;
     -webkit-box-pack: start;
