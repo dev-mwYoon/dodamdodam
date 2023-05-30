@@ -287,7 +287,10 @@
                 status = "진행중"; // Event is currently ongoing
             } else if(date <= new Date(result[i].eventEndDate)){
                 status = "종료"; // Event has ended
+            } else {
+                status = "종료";
             }
+
 
             text += `
                     <div class="instance">
@@ -300,7 +303,7 @@
                 text += `<img src="/images/free-board/basic-image.png">`;
             }
             text += `
-                        <a href="/event/detail/${result[i].id}">
+                        <a href="/event/detail/${result[i].id}" style="text-decoration: none">
                         <div class="instance-detail">
                             <div class="detail-header">
                             <div class="detail-hedaer-left-center"></div>

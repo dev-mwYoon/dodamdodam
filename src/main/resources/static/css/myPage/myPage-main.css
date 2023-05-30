@@ -55,6 +55,14 @@ body {
     --scrollbar-width: 0;
 }
 
+.member_name {
+    font-weight: 700 !important;
+}
+
+.member_name_next {
+    font-weight: 400 !important;
+}
+
 /* 모달창 스타일 */
 .modal {
     display: none;

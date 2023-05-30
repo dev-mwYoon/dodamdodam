@@ -1,0 +1,875 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+html{
+    --scrollbar-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-style: normal;
+    vertical-align: baseline;
+    font: inherit;
+    box-sizing: border-box;
+    -webkit-locale: "ko";
+    display: block;
+    height: 100%;
+}
+
+body{
+    font-family: Roboto, 'Noto Sans KR', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    min-width: 1200px;
+    color: #4d5256;
+    letter-spacing: -.03em;
+    line-height: 1;
+    font-size: 15px;
+    font-weight: 400;
+    overflow-y: scroll;
+    height: 100%;
+}
+
+#wrap{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-style: normal;
+    height: 100%;
+}
+
+#container{
+    z-index: 10;
+    height: fit-content;
+}
+
+#recruitment-container{
+    width: 100%;
+    height: 100%;
+    padding-bottom: 50px;
+    background: #f4f4f4;
+}
+
+.container-form{
+    width: 920px;
+    margin: 0 auto;
+}
+
+.recruitment-title{
+    font-family: 'Noto Sans KR';
+    padding-top: 40px;
+    padding-bottom: 32px;
+    text-align: left;
+}
+
+.recruitment-title h3{
+    margin-bottom: 12px;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 600;
+    color: #0d0f12;
+}
+
+.sub-text{
+    width: 700px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #44484b;
+}
+
+.recruitment-info{
+    width: 100%;
+    height: 100%;
+}
+
+.info-img{
+    float: left;
+    width: 540px;
+    height: 390px;
+}
+
+.info-img img{
+    width: 540px;
+    height: 390px;
+}
+
+.info-sum{
+    float: right;
+    position: relative;
+    width: 348px;
+    height: 390px;
+    border: 1px solid #e4e4e4;
+    background: #fff;
+}
+
+.info-sum dl{
+    width: 100%;
+    border-bottom: 1px solid #e4e4e4;
+    display: flex;
+    height: 66px;
+    align-items: center;
+}
+
+.info-sum dl dt{
+    float: left;
+    width: 130px;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 20px;
+    font-size: 14px;
+    line-height: 3;
+}
+
+.info-sum dl dd{
+    float: right;
+    width: 225px;
+    height: 50px;
+    line-height: 50px;
+    padding-right: 20px;
+    font-size: 14px;
+    text-align: right;
+    margin: 0;
+    line-height: 3;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+
+dd span{
+    color: #006633;
+}
+
+.info-sum dl:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.center{
+    text-align: center;
+}
+
+.recruitment-status{
+    font-size: 18px;
+    text-align: right;
+    padding-right: 20px;
+    height: 50px;
+    line-height: 35px;
+    color: #006633;
+}
+
+.recruitment-btn-apply{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.submit-btn{
+    width: 347px;
+    height: 58px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    background: #006633;
+    border: none;
+    border-radius: 3px;
+    border-top: 1px solid #e4e4e4;
+    font-family: inherit;
+}
+
+.sns-share{
+    margin-bottom: 35px;
+    text-align: right;
+    display: inline-block;
+    margin-top: 12px;
+}
+
+.sns-share span {
+    font-size: 14px;
+    padding-right: 5px;
+    padding-left: 470px;
+}
+
+.contents-detail{
+    /* margin-bottom: 50px; */
+    border: 1px solid #e4e4e4;
+    background: #fff;
+}
+
+.recruitment-detail-container{
+    display: block;
+    line-height: 27px;
+    padding: 60px;
+}
+
+.recruitment-detail-container img{
+    width: 600px;
+    display: block;
+    vertical-align: top;
+    margin: 0px auto;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+}
+
+.info-sum:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.sns-share{
+    margin-bottom: 35px;
+    text-align: right;
+}
+
+.share-sns span{
+    font-size: 14px;
+    padding-right: 15px;
+}
+
+[class^=icon_sns] {
+    width: 31px;
+    height: 31px;
+    margin-right: 5px;
+    background: url(https://www.wadiz.kr/resources/equity/img/icon_sns.png);
+}
+
+[class^=icon_] {
+    display: inline-block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    font-size: 0;
+    line-height: 0;
+    text-decoration: none;
+    vertical-align: middle;
+    text-indent: -1000em;
+}
+
+.icon_sns_fb{
+    width: 18px;
+    height: 18px;
+    background: url(../../images/recruitment-board/facebook-icon.png);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-right: 10px;
+}
+
+.icon_sns_tw{
+    width: 20px;
+    height: 20px;
+    background: url(../../images/recruitment-board/twitter-icon.png);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.icon_sns_share{
+    width: 20px;
+    height: 20px;
+    background: url(../../images/recruitment-board/share-icon.png);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-left: 8px;
+}
+
+input{
+    position: absolute;
+    top: 0;
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+.submit-btn{
+    cursor: pointer;
+}
+
+.icon_sns_share {
+    background-position: 100% 0;
+    cursor: pointer;
+}
+
+.comment-util-list li button {
+    display: block;
+    height: 22px;
+    font-size: 12px;
+    line-height: 22px;
+    border: none;
+    background-color: transparent;
+}
+
+.modal-bg {
+    display:none;
+    width:100%;
+    height:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index:999;
+}
+
+.modal-wrap {
+    display:none;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:250px;
+    height:150px;
+    background:#fff;
+    z-index:1000;
+    text-align: center;
+    font-size: 16px;
+    padding: 20px;
+    padding: 50px 15px 16px;
+}
+
+.modal-copy {
+    display:none;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:250px;
+    height:150px;
+    background:#fff;
+    z-index:1000;
+    text-align: center;
+    font-size: 16px;
+    padding: 20px;
+    padding: 50px 15px 16px;
+}
+
+
+.modal{
+    margin-top:80px;
+    /* margin-left:2px; */
+    width:245px;
+    position: relative;
+    left: -16px;
+    bottom: 44px;
+    width: calc(100% + 31.4px);
+}
+
+
+.like-modal-container{
+    margin-left: 1235px;
+    display: none;
+    padding: 25px;
+    text-align: center;
+    width: 130px;
+    height: 0px;
+    background-color: #000;
+    color: #fff;
+    font-family: 'Noto Sans KR';
+    font-weight: 400;
+    border-radius: 10px;
+    top: 58%;
+    position: fixed;
+    z-index: 999;
+    font-size: 12px;
+    line-height: 0;
+    top: 45%;
+}
+
+.event-like{
+    top: 47%;
+    margin-left: 1235px;
+}
+
+.recruit-like{
+    margin-left: 1235px;
+    top: 45%;
+}
+
+.d-day{
+    position: relative;
+    line-height: 25px;
+    left: 219px;
+    bottom: 16px;
+}
+
+/* 찜하기 버튼 */
+.wish-button-box {
+    position: absolute;
+    display: flex;
+    align-items: center;
+}
+
+.wish-button{
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    justify-content: center;
+    border: 1px solid lightgray;
+    margin-left: 20px;
+    position: relative;
+    bottom: 6px;
+    background-color: transparent;
+    border-radius: 4px;
+}
+
+button[class*=Button_button] {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.wish-button span{
+    display: inline-flex;
+    align-items: center;
+    vertical-align: top;
+}
+
+.wish-button-children{
+    pointer-events: none;
+    vertical-align: top;
+}
+
+.withIcon-icon{
+    width: 24px;
+    height: 24px;
+    display: block;
+    transform: scale(1);
+    will-change: transform;
+    transition: transform .3s ease-out;
+    margin: 0 auto;
+    font-size: 24px;
+    fill: currentColor;
+}
+
+.withIcon-icon path{
+    fill: #868e96;
+}
+
+[aria-pressed=true] path{
+    fill: #f66;
+}
+
+[aria-pressed=true]{
+    fill: #f66;
+}
+
+.heart-icon{
+    border-radius: 4px;
+}
+
+svg:not(:root) {
+    overflow-clip-margin: content-box;
+    overflow: hidden;
+}
+
+.my-board{
+    margin-top: -37px;
+    display: flex;
+    margin-bottom: 40px;
+}
+
+
+.btn{
+    border-radius: 0px;
+    border: 1px solid #006633;
+    color: #006633;
+    font-family: 'Noto Sans KR';
+    width: 200px;
+    height: 50px;
+    margin-top: 50px;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.list{
+    margin-right: 309px;
+}
+
+.btn a{
+    text-decoration: none;
+    color: #006633;
+    font-size: 18px;
+}
+
+.delete{
+    background-color: #006633;
+    margin-left: 5px
+}
+
+.delete-a{
+    color: #fff !important;
+}
+
+
+
+a:visited { text-decoration: none; }
+a:hover { text-decoration: none; }
+a:focus { text-decoration: none; }
+a:hover, a:active { text-decoration: none; }
+
+/* top 버튼 */
+
+html.scroll-top.scroll-apex .top-btn {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.top-btn-container{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: fixed;
+    right: 16px;
+    bottom: 20px;
+    transition-property: transform,scale;
+    transition-duration: .25s;
+    z-index: 1200;
+}
+
+
+.top-btn{
+    display: block;
+    position: relative;
+    border-radius: 50%;
+    background: rgba(255,255,255,.8);
+    padding: 0 0 env(safe-area-inset-bottom);
+    color: #babdc0;
+    box-sizing: border-box;
+    border: 1px solid #babdc0;
+}
+
+
+button:not(:disabled) {
+    cursor: pointer;
+}
+
+html.scroll-top .top-btn-container {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.top-btn svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: transform .3s ease-out;
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+}
+
+.board-comment-detail{
+    padding-bottom: 30px;
+}
+
+
+
+/* comment */
+.board-comment {
+    padding-bottom: 30px;
+}
+
+.like-share-area:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.like-share-area {
+    padding: 15px 10px;
+    padding-left: max(10px, env(safe-area-inset-left));
+    padding-right: max(10px, env(safe-area-inset-right));
+}
+
+.like-share-area .btn-like {
+    position: relative;
+    display: inline-block;
+    float: left;
+    padding: 0 10px 0 35px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 13px;
+    color: #e4e4e4;
+    border: 1px solid #e4e4e4;
+}
+
+.like-share-area .btn-like img {
+    position: absolute;
+    top: 8px;
+    left: 11px;
+    width: 15px;
+    height: 13px;
+}
+
+.btn-like.active-heart-button {
+    color: #F98F9B;
+    border-color: #F98F9B;
+}
+
+.like-share-area .btn-share {
+    float: right;
+}
+
+.btn-share img {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border: none;
+    background: no-repeat 0 0;
+    background-size: cover;
+}
+
+.comment-box {
+    padding: 20px 10px;
+    border-top: 1px solid #e4e4e4;
+}
+
+.message-box {
+    margin-top: 0;
+}
+
+.comment-count {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.comment-count em {
+    color: #006633;
+}
+
+.main-comment textarea {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+    font-size: 13px;
+    line-height: 18px;
+    border: 1px solid #e4e4e4;
+    background: #fff;
+    box-sizing: border-box !important;
+    overflow-y: hidden;
+    resize: none;
+}
+
+.main-comment .btn-complete {
+    text-align: right;
+}
+
+/* 댓글 버튼 */
+/* .btn-color {
+    display: inline-block;
+    padding: 0 12px;
+    height: 33px;
+    line-height: 33px;
+    font-size: 14px;
+    background: #006633;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+} */
+
+.btn-color {
+    display: inline-block;
+    padding: 0 12px;
+    height: 33px;
+    line-height: 33px;
+    font-size: 14px;
+    background: #fff;
+    color: #006633;
+    border: 1px solid;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.comment-list {
+    margin-bottom: 15px;
+    border-bottom: none;
+}
+
+#comment-list-detail > li {
+    display: none;
+}
+
+.comment-wrap {
+    margin-top: 20px;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #e4e4e4;
+}
+
+.comment-info {
+    position: relative;
+    margin-bottom: 10px;
+    height: 35px;
+}
+
+.comment-info img {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+    width: 25px;
+    height: 25px;
+    background: no-repeat center center;
+    background-size: cover;
+    border-radius: 50%;
+}
+
+.comment-wrap .comment-content {
+    margin-bottom: 10px;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.comment-info .name {
+    display: inline-block;
+    vertical-align: middle;
+    height: 35px;
+    line-height: 35px;
+    font-size: 13px;
+}
+
+.comment-date {
+    display: inline-block;
+    padding: 0 5px;
+    font-size: 12px;
+    line-height: 12px;
+    color: #929292;
+}
+
+.comment-bottom button {
+    padding: 0 5px;
+    font-size: 12px;
+    vertical-align: middle;
+    line-height: 12px;
+    color: #006633;
+    background: none;
+    border: none;
+}
+
+/* 수정/삭제 */
+.comment-util {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0;
+    display: inline-block;
+    width: 11px;
+    height: 7px;
+    background: url('https://www.wadiz.kr/resources/static/img/common/icon_grey_open.png') no-repeat 0 0;
+    background-size: cover;
+    border: none;
+    z-index: 9;
+}
+
+.comment-util-list {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 10px;
+    width: 50px;
+    padding: 10px;
+    border: 1px solid #e4e4e4;
+    background: #fff;
+    z-index: 10;
+}
+
+.comment-util-list li button {
+    display: block;
+    height: 22px;
+    font-size: 12px;
+    line-height: 22px;
+}
+
+.comment-wrap textarea {
+    overflow-y: hidden;
+    resize: none;
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+    font-size: 13px;
+    line-height: 18px;
+    border: 1px solid #e4e4e4;
+    background: #F4F4F4;
+    box-sizing: border-box !important;
+}
+
+.btn-place {
+    text-align: center;
+}
+
+button.btn-comment {
+    display: inline-block;
+    padding: 0 15px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    color: #4a4a4a;
+    background: transparent;
+    border: 1px solid #e4e4e4;
+    cursor: pointer;
+}
+
+
+li, ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+em{
+    margin: 0;
+    border: 0;
+    padding: 0;
+    vertical-align: baseline;
+    font: inherit;
+    box-sizing: border-box;
+}
+
+
+body, body button, body input, body select, body textarea {
+    font-family: Noto Sans KR !important;
+}
+
+table{
+    text-align: center;
+    width: 800px;
+    border: 1px solid #babdc0;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+td{
+    border: 1px solid #babdc0;
+}
+
+
+@media screen and (min-width: 1097px){
+    .top-btn {
+        width: 60px;
+        height: 60px;
+        font-size: 32px;
+    }
+}
+
+@media screen and (min-width: 960px){
+    .board-detail-bottom-container {
+        /* width: 960px; */
+        margin: 0 auto;
+    }
+}
