@@ -12,17 +12,17 @@
 #### 담당 분야 활용 기술
 - JPA 기술을 활용하여 Repository를 통해 DBMS에 접근하여 정보를 조회하고 화면에 전달했습니다.
 
-##### ![image](https://github.com/dev-mwYoon/dodamdodam/assets/122762471/5487b19e-7320-4a11-8ef0-d864c57e780d) 로그인, 회원가입
+##### ▶ 로그인, 회원가입
 1. Redis
 2. Spring Security
 3. OAuth 2.0
 4. Thymeleaf
 5. Ajax & Rest
 
-##### ![image](https://github.com/dev-mwYoon/dodamdodam/assets/122762471/c1a2ad1c-d823-457a-8b95-9297b5975b63) 결제
+##### ▶ 결제
 1. 부트페이 API
 
-##### ![image](https://github.com/dev-mwYoon/dodamdodam/assets/122762471/d6764c18-57df-4ac3-a6db-2d851d92475c) 판매 게시판
+##### ▶ 판매 게시판
 1. Thymeleaf
 2. Ajax & Rest
 
