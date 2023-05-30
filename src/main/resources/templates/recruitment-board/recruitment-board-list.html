@@ -563,12 +563,17 @@
     /* 날짜 변환 (년, 월, 일) */
     function changeDateToString(e){
         let month = "";
+        let day = "";
         date = new Date(e.recruitmentDate);
         month = date.getMonth() + 1;
+        day = date.getDate();
         if (month < 10){
             month = "0" + month;
         }
-        return date.getFullYear() + "." + month + "." + date.getDate();
+        if (day < 10){
+            day = "0" + day;
+        }
+        return date.getFullYear() + "." + month + "." + day;
     }
 
     // ajax로 게시글 목록 불러오기(12개씩 가져옴)

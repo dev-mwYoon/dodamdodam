@@ -111,6 +111,14 @@ function showList(data) {
     console.log("showList 들어옴");
     let members = data.content;
     members.forEach(member => {
+        let status = member.memberStatus;
+        if(status == "NORMAL"){
+            status = "일반 회원";
+        } else if(status == "WITHDRAWAL"){
+            status = "탈퇴 회원";
+        } else {
+            status = "일반 회원";
+        }
         console.log("text 들어옴");
         var text = "";
         text += `
@@ -129,7 +137,7 @@ function showList(data) {
                 <td class="memberDetail">${member.memberName}</td>
                 <td class="memberDetail">${member.memberPhone}</td>
                 <td class="memberDetail">${member.memberEmail}</td>
-                <td class="memberDetail">${member.memberStatus}</td>
+                <td class="memberDetail">${status}</td>
                 <!--  <td>{point.pointStatus}</td> -->
                 <!-- <td>2000.01.01 21:05:04</td>-->
                 <!-- <td><button class="show-detail" onclick="showModal()">상세보기</button></td> -->
@@ -157,7 +165,7 @@ $(document).ready(function() {
 
         // 선택된 항목이 없는 경우 경고창을 표시하고 함수를 종료
         if (selectedItems.length === 0) {
-            alert('탈퇴할 회원을 선택해주세요.');
+            // alert('탈퇴할 회원을 선택해주세요.');
             return;
         }
         $('#delete-modal').show(); //삭제 모달창 열기
@@ -171,7 +179,7 @@ $(document).ready(function() {
                     location.reload() //변경완료 후 새로고침
                 },
                 error: function (xhr, status, error) {
-                    alert('오류가 발생했습니다. 다시 시도해주세요.');
+                    // alert('오류가 발생했습니다. 다시 시도해주세요.');
                     console.log(error);
                 }
             });

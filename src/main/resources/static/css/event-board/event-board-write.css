@@ -55,6 +55,9 @@ section{
 
 .member-type{
     padding-top: 40px;
+    width: fit-content;
+    margin: 0 auto;
+    text-align: center;
 }
 
 h3{
@@ -129,6 +132,7 @@ p{
     box-sizing: border-box!important;
     -webkit-appearance: none;
     -webkit-font-smoothing: antialiased;
+    width: 200px;
 }
 
 .business-type-btn span{
@@ -151,7 +155,7 @@ p{
 .info-register{
     padding-top: 40px;
     width: 410px;
-
+    margin: 0 auto;
 }
 
 .waffle{
@@ -331,7 +335,7 @@ button:not(:disabled) {
     display: block;
     position: relative;
     font-weight: 300;
-    width: 300px;
+    width: calc(100% - 102px);
     padding-left: 14px;
     margin-right: 7px;
     border-radius: 3px;
@@ -374,6 +378,7 @@ input[name=address]::placeholder {
     -webkit-appearance: none;
     -webkit-font-smoothing: antialiased;
     font-family: 'Noto Sans KR';
+    width: calc(100% + 32px);
 }
 
 .submit-btn{
@@ -384,7 +389,7 @@ input[name=address]::placeholder {
     line-height: 1.4;
     font-size: 18px;
     font-family: inherit;
-    width: 414px;
+    width: calc(100% + 32px);
 }
 
 .submit-btn[disabled]{

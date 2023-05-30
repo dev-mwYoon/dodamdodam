@@ -58,7 +58,7 @@ textarea {
     min-height: 100vh;
 }
 #title{
-    position: sticky;
+    /* position: sticky; */
     top: 0;
     z-index: 10;
 }
@@ -526,39 +526,39 @@ form button{
     /* height: 1.5em; */
     line-height: 1.5em;
     font-size: 1.5em;
-  }
-  
-  .rating input {
+}
+
+.rating input {
     display: none;
-  }
-  
-  .rating label {
+}
+
+.rating label {
     top: 0;
     left: 0;
     height: 1.5em;
     width: 1.5em;
     cursor: pointer;
-  }
-  
-  /* .rating label:before {
-    content: "\2605";
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-size: 1.5em;
-    color: #ddd;
-  } */
+}
 
-  #label1::before {
+/* .rating label:before {
+  content: "\2605";
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 1.5em;
+  color: #ddd;
+} */
+
+#label1::before {
     content: "\2605";
     top: 0;
     left: 0;
     font-size: 1.5em;
     color: #ddd;
     height: 1.5em;
-  }
-  
-  #label2::before {
+}
+
+#label2::before {
     content: "\2605";
     top: 0;
     left: 1em;
@@ -566,51 +566,51 @@ form button{
     font-size: 1.5em;
     color: #ddd;
     height: 1.5em;
-  }
-  
-  #label3::before {
+}
+
+#label3::before {
     content: "\2605";
     top: 0;
     left: 2em;
     font-size: 1.5em;
     color: #ddd;
     height: 1.5em;
-  }
-  
-  #label4::before {
+}
+
+#label4::before {
     content: "\2605";
     top: 0;
     left: 3em;
     font-size: 1.5em;
     color: #ddd;
     height: 1.5em;
-  }
-  
-  #label5::before {
+}
+
+#label5::before {
     content: "\2605";
     top: 0;
     left: 4em;
     font-size: 1.5em;
     color: #ddd;
     height: 1.5em;
-  }
-  
-  .rating input:checked ~ label::before {
-    color: #ffcc00 !important;
-  }
+}
 
-  .rating-reply input:checked ~ label::before {
+.rating input:checked ~ label::before {
     color: #ffcc00 !important;
-  }
-  .rating .score {
+}
+
+.rating-reply input:checked ~ label::before {
+    color: #ffcc00 !important;
+}
+.rating .score {
     top: 100%;
     left: 0;
     font-size: 0.8em;
     color: #999;
     display: none;
-  }
-  
-  .score {
+}
+
+.score {
     position: relative;
     top: -1px;
     line-height: 20px;
@@ -625,59 +625,59 @@ form button{
     font-size: 1em;
     display: block;
     color: black; */
-  }
-  
-  .rating input:checked ~ .score {
-    display: block;
-  }
-  
-  .rating-reply {
-      position: absolute;
-      top: 7px;
-      left: 91px;
-      display: flex;
-      flex-direction: row-reverse;
-  }
+}
 
-  .review-score-box {
+.rating input:checked ~ .score {
+    display: block;
+}
+
+.rating-reply {
+    position: absolute;
+    top: 7px;
+    left: 91px;
     display: flex;
     flex-direction: row-reverse;
-  }
+}
 
-  .star {
+.review-score-box {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.star {
     display: none;
-  }
+}
 
 
-  .review-score::before {
+.review-score::before {
     content: "\2605";
     top: 0;
     left: 4em;
     font-size: 1.5em;
     color: #ddd;
     height: 1.5em;
-  }
-  #review_score_box_layout{
-    margin: 0 110px 30px; 
-    display: flex; 
-    font-size: 16px; 
+}
+#review_score_box_layout{
+    margin: 0 110px 30px;
+    display: flex;
+    font-size: 16px;
     position: relative;
-  }
-  #correction_delete{
+}
+#correction_delete{
     position: absolute;
     top: 29px;
     right: 138px;
     font-size: 18px;
     cursor: pointer;
-  }
-  #float_delete{
-    float: right; 
-    cursor: pointer; 
-    position: absolute; 
+}
+#float_delete{
+    float: right;
+    cursor: pointer;
+    position: absolute;
     right: -23px;
     top: -10px;
-  }
-  .profile-image {
+}
+.profile-image {
     font-size: 24px;
     color: #fff;
     font-weight: 500;
@@ -722,6 +722,6 @@ form button{
 .content-member-status span {
     font-size: 17px;
     font-weight: 500;
-    color: #fff;    
+    color: #fff;
 }
-/* 추가 */
+/* ì¶”ê°€ */

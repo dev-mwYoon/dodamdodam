@@ -55,9 +55,9 @@
                           style="outline: none; width: 626px"
                         >
                           <div>
-                            <div tabindex="-1" style="width: 100%; display: inline-block">
+                            <div class="real_show_image_container" tabindex="-1" style="width: 100%; display: inline-block">
                               <div
-                                class="StoreSlider_slickBackgroundImage__1CH4Y"
+                                class="StoreSlider_slickBackgroundImage__1CH4Y real_show_image"
                                 style="
                                   background-image: url('https://cdn2.wadiz.kr/2021/09/01/7ba81656-973b-4ecc-916b-f4163dcb83f2');
                                 "
@@ -519,7 +519,19 @@
   // presentFileDTO = purchaseBoardsDTO.purchaseFileDTOs[0];
   // '/file/display?fileName=' + purchaseBoardsDTO.purchaseFileDTOs[0].filePath + '/t_' + purchaseBoardsDTO.purchaseFileDTOs[0].fileUuid + '_' + purchaseBoardsDTO.purchaseFileDTOs[0].fileOriginalName;
 
-  $(".StoreSlider_slickBackgroundImage__1CH4Y").css("background-image", "url('/file/display?fileName=' + purchaseBoardsDTO.purchaseFileDTOs[0].filePath + '/t_' + purchaseBoardsDTO.purchaseFileDTOs[0].fileUuid + '_' + purchaseBoardsDTO.purchaseFileDTOs[0].fileOriginalName)");
+  // <div class="photo-thumbnail" style="background-image: url('${filePath == null ? '/images/free-board/basic-image.png' : filePath}')"></div>
+  if (purchaseBoardDTO.purchaseFileDTOs.length > 0) {
+      filePath = '/file/display?fileName=' + purchaseBoardDTO.purchaseFileDTOs[0].filePath + '/t_' + purchaseBoardDTO.purchaseFileDTOs[0].fileUuid + '_' + purchaseBoardDTO.purchaseFileDTOs[0].fileOriginalName;
+      let text = "";
+
+      text += `
+        <div class="StoreSlider_slickBackgroundImage__1CH4Y real_show_image"
+         style="background-image: url('${filePath == null ? '/images/free-board/basic-image.png' : filePath}')"></div>
+      `;
+
+      $(".real_show_image_container").html(text);
+  }
+
 </script>
 <script>
 

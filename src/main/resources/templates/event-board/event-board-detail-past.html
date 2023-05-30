@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 정보 게시판 상세</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gugi&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/css/event-board/event-board-detail.css">
+    <link rel="shortcut icon" href="/images/components/dodam-favicon.png">
+    <link rel="stylesheet" href="/css/components/header.css">
+    <link rel="stylesheet" href="/css/components/footer.css">
+</head>
+<body>
+    <div th:insert="~{/components/header :: header}"></div>
+    <!--모달창-->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>로그인 후 이용해주세요.</p>
+            <button id="closeModalBtn">확인</button>
+        </div>
+    </div>
+    <!--모달창-->
+    <div id="wrap">
+       <div id="container">
+              <!-- 모달창 -->
+              <div class="like-modal-container event-like" id="like-modal">
+                <span class="like-text" style="display:none;">찜 목록에 추가했습니다</span>
+                <span class="like-cancel-text"style="display:none;">찜 목록에서 제외했습니다</span>
+              </div>
+
+                <!-- top 버튼 -->
+                <div class="top-btn-container">
+                    <button type="button" class="top-btn">
+                    <svg viewBox="0 0 40 40" focusable="false" role="presentation" class="top-btn-svg" aria-hidden="true">
+                    <path d="M33 30l-1.4 1.4L20 19.8 8.4 31.4 7 30l13-13zm1-21H6v2h28z"></path></svg>
+                </button></div>
+
+
+                    <!-- 신청완료  modal 영역 -->
+            <div class="modal-bg" onClick="javascript:popClose();"></div>
+            <div class="modal-wrap">
+                <span>신청이 완료되었습니다</span>
+                <button type="button" class="modal-close submit-btn modal" onClick="javascript:popClose();">닫기</button>
+                    </div>
+                    <!-- //modal 영역 -->
+
+                    
+                    <!-- 복사완료  modal 영역 -->
+            <div class="modal-bg" onClick="javascript:popCopyClose();"></div>
+            <div class="modal-copy">
+                <span>복사 완료되었습니다</span>
+                <button type="button" class="modal-close submit-btn modal" onClick="javascript:popCopyClose();">닫기</button>
+            </div>
+                    <!-- //modal 영역 -->
+
+
+                    </div>
+                </div> <!--wrap -->
+            </div>
+        </div>
+    <textarea style="display:none;"></textarea>
+<div th:insert="~{/components/footer :: footer}"></div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="/js/recruitment-board/recruitment-board-detail.js"></script>
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.min.js"
+  integrity="sha384-dpu02ieKC6NUeKFoGMOKz6102CLEWi9+5RQjWSV0ikYSFFd8M3Wp2reIcquJOemx" crossorigin="anonymous">
+</script>
+<script>
+  Kakao.init('e21d13e33dbb10932785f7663d4603f1'); // 사용하려는 앱의 JavaScript 키 입력
+</script>
+<script>
+/* 좋아요 */
+$(function(){
+    $('.wish-button').click(function(e){
+        if($('.wish-button').attr('aria-pressed') == 'false'){
+            $(".heart-icon").attr("src", "images/recruitment-board/heart-background.png");
+            $('.wish-button').attr('aria-pressed','true') //하트 색 채우기
+            $('.like-cancel-text').hide(); //해제 문구
+            $('#like-modal').fadeIn();
+            $('.like-text').fadeIn();
+            // $('#like-modal').css({right: '-30%'}); //오->왼 슬라이드 등장
+            // $('#like-modal').animate({right:'30px'}, {duration: 700}); //오->왼 슬라이드 등장
+            // $('#like-modal').show(); //슬라이드 보이기
+            // $('.like-text').show(); //찜 추가 문구
+            $('#like-modal').delay(500).fadeOut(); //사라지기
+
+        }else{
+            $(".heart-icon").attr("src", "images/recruitment-board/non-heart-icon.png");
+            $('.wish-button').attr('aria-pressed','false') //색 비우기
+            $('.like-text').hide();  //찜 추가 문구
+            // $('#like-modal').css({right: '-30%'}); //오->왼 슬라이드 등장
+            // $('#like-modal').animate({right:'30px'}, {duration: 700}); //오->왼 슬라이드 등장
+            $('#like-modal').fadeIn();
+            $('.like-cancel-text').fadeIn(); //찜 해제 문구
+            // $('#like-modal').show(); //슬라이드 보이기
+            // $('.like-cancel-text').show(); //찜 해제 문구
+            $('#like-modal').delay(500).fadeOut(); //사라지기
+        }
+    });
+});
+/* url 복사 */
+function clip(){
+var url = '';
+var textarea = document.createElement("textarea");
+    document.body.appendChild(textarea);
+    url = window.document.location.href;
+    textarea.value = url;
+    textarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textarea);
+}
+
+/* 복사 완료 모달 */
+function popCopyOpen() {
+var modalPop = $('.modal-copy');
+var modalBg = $('.modal-bg');
+    $(modalPop).show();
+    $(modalBg).show();
+}
+function popCopyClose() {
+var modalPop = $('.modal-copy');
+var modalBg = $('.modal-bg');
+    $(modalPop).hide();
+    $(modalBg).hide();
+}
+
+/* top 버튼  */
+var topEle = $('.top-btn');
+var delay = 400;
+
+/* top show-hide */
+$(window).scroll(function() {
+    if($(this).scrollTop() > 200 ) {
+        // console.log(topEle);
+		$('.top-btn').fadeIn();
+	} else {
+		$('.top-btn').fadeOut();
+	}
+});
+
+/* top버튼- 위로 올리기 */
+$('.top-btn').click( function() {
+	$('html, body').animate({scrollTop:0}, delay );
+	return false;
+});
+</script>
+</html>
