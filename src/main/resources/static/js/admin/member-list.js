@@ -72,6 +72,14 @@ function listText(list) {
     console.log("list text 들어옴");
     let memberDTOS = list.content;
     $(memberDTOS).each((i, member) => {
+        let status = member.memberDTO.memberStatus;
+        if(status == "NORMAL"){
+            status = "일반 회원";
+        } else if(status == "WITHDRAWAL"){
+            status = "탈퇴 회원";
+        } else {
+            status = "일반 회원";
+        }
         console.log("text 들어옴");
         var text = "";
         text += `

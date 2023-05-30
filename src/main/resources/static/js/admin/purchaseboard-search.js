@@ -165,7 +165,7 @@ $(document).ready(function() {
 
         // 선택된 항목이 없는 경우 경고창을 표시하고 함수를 종료
         if (selectedItems.length === 0) {
-            alert('삭제할 항목을 선택해주세요.');
+            // alert('삭제할 항목을 선택해주세요.');
             return;
         }
         $('#delete-modal').show(); //삭제 모달창 열기
@@ -180,7 +180,7 @@ $(document).ready(function() {
                     location.reload() //삭제완료 후 새로고침
                 },
                 error: function (xhr, status, error) {
-                    alert('오류가 발생했습니다. 다시 시도해주세요.');
+                    // alert('오류가 발생했습니다. 다시 시도해주세요.');
                     console.log(error);
                 }
             });

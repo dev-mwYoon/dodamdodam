@@ -429,8 +429,8 @@
             </div>
             <div class="board-ul">
                 <!-- 게시글 1개 시작 -->
-                <div class="board-li">
-                    <input type="hidden" id="freeBoardId" th:value="${freeBoards[0].id}">
+                <div class="board-li free-li">
+                    <input type="hidden" class="freeBoardId" th:value="${freeBoards[0].id}">
                     <div class="board-title">
                         <div class="board-title-context">
                             <span th:text ="${freeBoards[0].boardTitle}"></span>
@@ -442,10 +442,10 @@
                 </div>
                 <!-- 게시글 1개 끝 -->
                 <!-- 게시글 1개 시작 -->
-                <div class="board-li">
+                <div class="board-li free-li">
                     <div class="board-title">
                         <div class="board-title-context">
-                            <input type="hidden" id="freeBoardId" th:value="${freeBoards[1].id}">
+                            <input type="hidden" class="freeBoardId" th:value="${freeBoards[1].id}">
                             <span th:text ="${freeBoards[1].boardTitle}"></span>
                         </div>
                     </div>
@@ -455,10 +455,10 @@
                 </div>
                 <!-- 게시글 1개 끝 -->
                 <!-- 게시글 1개 시작 -->
-                <div class="board-li">
+                <div class="board-li free-li">
                     <div class="board-title">
                         <div class="board-title-context">
-                            <input type="hidden" id="freeBoardId" th:value="${freeBoards[2].id}">
+                            <input type="hidden" class="freeBoardId" th:value="${freeBoards[2].id}">
                             <span th:text ="${freeBoards[2].boardTitle}"></span>
                         </div>
                     </div>
@@ -487,11 +487,10 @@
             </div>
             <div class="board-ul">
                 <!-- 게시글 1개 시작 -->
-                <div class="board-li">
+                <div class="board-li recruitment-li">
                     <div class="board-title">
                         <div class="board-title-context">
-                            <input type="hidden" id="freeBoardId" th:value="${recruitmentBoards[0].id}">
-                            <input type="hidden" id="eventBoardId" th:value="${recruitmentBoards[0].id}">
+                            <input type="hidden" class="recruitmentBoardId" th:value="${recruitmentBoards[0].id}">
                             <span th:text ="${recruitmentBoards[0].boardTitle}"></span>
                         </div>
                     </div>
@@ -503,11 +502,10 @@
                 </div>
                 <!-- 게시글 1개 끝 -->
                 <!-- 게시글 1개 시작 -->
-                <div class="board-li">
+                <div class="board-li recruitment-li">
                     <div class="board-title">
                         <div class="board-title-context">
-                            <input type="hidden" id="freeBoardId" th:value="${recruitmentBoards[1].id}">
-                            <input type="hidden" id="eventBoardId" th:value="${recruitmentBoards[1].id}">
+                            <input type="hidden" class="recruitmentBoardId" th:value="${recruitmentBoards[1].id}">
                             <span th:text ="${recruitmentBoards[1].boardTitle}"></span>
                         </div>
                     </div>
@@ -518,11 +516,10 @@
                 </div>
                 <!-- 게시글 1개 끝 -->
                 <!-- 게시글 1개 시작 -->
-                <div class="board-li">
+                <div class="board-li recruitment-li">
                     <div class="board-title">
                         <div class="board-title-context">
-                            <input type="hidden" id="freeBoardId" th:value="${recruitmentBoards[2].id}">
-                            <input type="hidden" id="eventBoardId" th:value="${recruitmentBoards[2].id}">
+                            <input type="hidden" class="recruitmentBoardId" th:value="${recruitmentBoards[2].id}">
                             <span th:text ="${recruitmentBoards[2].boardTitle}"></span>
                         </div>
                     </div>
@@ -1006,10 +1003,17 @@
     });
 
 
-    $('.board-li').on('click', function() {
+    $('.free-li').on('click', function() {
         console.log("onclick 들어옴");
         var freeBoardId = $(this).find('input[type="hidden"]').val();
         var detailUrl = '/free/detail/' + freeBoardId;
+        window.location.href = detailUrl;
+    });
+
+    $('.recruitment-li').on('click', function() {
+        console.log("onclick 들어옴");
+        var recruitmentBoardId = $(this).find('input[type="hidden"]').val();
+        var detailUrl = '/recruitment/detail/' + recruitmentBoardId;
         window.location.href = detailUrl;
     });
 
@@ -1073,5 +1077,5 @@
 </script>
 <script src="/js/main/main.js"></script>
 <script src="/js/main/banner.js"></script>
-<script src="/js/components/chat_modal.js"></script>
+<!--<script src="/js/components/chat_modal.js"></script>-->
 </html>

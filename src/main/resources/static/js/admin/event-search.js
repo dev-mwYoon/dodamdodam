@@ -8,6 +8,7 @@ const searchVariable = {
     eventAddressDetail: null
 };
 
+
 let page = 0;
 
 

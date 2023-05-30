@@ -103,7 +103,7 @@ public class BoardRepositoryTests {
                 .recruitmentStatus(RecruitmentType.APPLYING)
                 .build();
 
-        memberRepository.findById(101L).ifPresent(member -> recruitmentBoard.setMember(member));
+        memberRepository.findById(50L).ifPresent(member -> recruitmentBoard.setMember(member));
 //        memberRepository.findById(5L).ifPresent(member -> recruitmentBoard.setMember(member));
 
         recruitmentBoardRepository.save(recruitmentBoard);

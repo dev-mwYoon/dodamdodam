@@ -49,6 +49,7 @@ body{
 }
 
 .culture-space-title{
+    font-size: 25px;
     margin-bottom: 24px;
     text-align: center;
     word-break: keep-all;
@@ -193,7 +194,7 @@ h3 {
     opacity: 1;
 }
 
-/* top ë²„íŠ¼ */
+/* top Ã«Â²â€žÃ­Å Â¼ */
 button {
     writing-mode: horizontal-tb !important;
     text-rendering: auto;
