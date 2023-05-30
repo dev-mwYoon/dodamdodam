@@ -8,8 +8,23 @@
 
 #### 백엔드 담당 분야
 - 로그인, 회원가입, 판매 게시판, 결제를 담당했습니다.
+
+#### 담당 분야 활용 기술
 - JPA 기술을 활용하여 Repository를 통해 DBMS에 접근하여 정보를 조회하고 화면에 전달했습니다.
-- Redis, Security, OAuth 2.0을 사용하여 로그인 회원가입 시, 보안 로직을 추가하였습니다.
+
+## 로그인, 회원가입
+1. Redis
+2. Spring Security
+3. OAuth 2.0
+4. Thymeleaf
+5. Ajax & Rest
+
+## 결제
+1. 부트페이 API
+
+## 판매 게시판
+1. Thymeleaf
+2. Ajax & Rest
 
 ## 데이터베이스 테이블(DB ERD)
 ![dodamdodam](https://github.com/dev-mwYoon/dodamdodam/assets/122762471/35c5c3c8-afc6-453e-9516-248be04971f1)
