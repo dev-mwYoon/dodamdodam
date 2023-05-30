@@ -4,6 +4,7 @@ import com.app.dodamdodam.domain.EventBoardDTO;
 import com.app.dodamdodam.domain.EventFileDTO;
 import com.app.dodamdodam.entity.event.EventBoard;
 import com.app.dodamdodam.entity.event.EventFile;
+import com.app.dodamdodam.entity.free.FreeLike;
 import com.app.dodamdodam.entity.member.Member;
 import com.app.dodamdodam.repository.board.event.board.EventBoardRepository;
 import com.app.dodamdodam.repository.board.event.file.EventFileRepository;
@@ -81,6 +82,17 @@ public class EventBoardServiceImpl implements EventBoardService {
 
     @Override
     public void update(EventBoardDTO eventBoardDTO) {
+
+    }
+
+    /* 이벤트 보드 수정 */
+    @Override
+    public void updateEventBoard(EventBoard updateBoard, Long boardId) {
+        /* 파일쪽이나 추가로 필요한 부분들 확인하고 set 추가 해줘야함 */
+        eventBoardRepository.findById(boardId).ifPresent(eventBoard -> {
+            eventBoard.setBoardTitle(updateBoard.getBoardTitle());
+            eventBoard.setBoardContent(updateBoard.getBoardContent());
+        });
     }
 
 
@@ -119,7 +131,10 @@ public class EventBoardServiceImpl implements EventBoardService {
 
     @Override
     public void delete(Long eventBoardId) {
-
+        /* 좋아요 관계 방향 때문에 직접 삭제해주면서 삭제해야해서 이쪽 FreeBoard 처럼 참고해서 수정해야함 */
+//        List<FreeLike> freeLikes = freeBoardLikeRepository.findByFreeBoardId_QueryDSL(boardId);
+//        freeBoardLikeRepository.deleteAll(freeLikes);
+        eventBoardRepository.findById(eventBoardId).ifPresent(eventBoard -> eventBoardRepository.delete(eventBoard));
     }
 
     /* 관리자 이벤트 검색 */

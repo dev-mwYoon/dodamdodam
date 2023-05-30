@@ -105,6 +105,7 @@ body{
     display: flex;
     height: 66px;
     align-items: center;
+    margin: 0;
 }
 
 .info-sum dl dt{
@@ -377,17 +378,20 @@ input{
     font-family: 'Noto Sans KR';
     font-weight: 400;
     border-radius: 10px;
-    top: 58%;
+    /* top: 58%; */
     position: fixed;
     z-index: 999;
     font-size: 12px;
     line-height: 0;
-    top: 45%;
+    /* top: 45%; */
 }
 
 .event-like{
-    top: 47%;
+    bottom: 3%;
+    right: 2%;
+    /* top: 50%; */
     margin-left: 1235px;
+    z-index: 9999;
 }
 
 .recruit-like{
@@ -397,16 +401,19 @@ input{
 
 .d-day{
     position: relative;
-    line-height: 25px;
-    left: 219px;
-    bottom: 16px;
+    line-height: 36px;
+    right: 0;
+    /* bottom: 16px; */
+    margin: 0;
 }
 
-/* 찜하기 버튼 */
+/* ì°œí•˜ê¸° ë²„íŠ¼ */
 .wish-button-box {
     position: absolute;
     display: flex;
     align-items: center;
+    width: 100%;
+    justify-content: space-between;
 }
 
 .wish-button{
@@ -518,7 +525,7 @@ a:hover { text-decoration: none; }
 a:focus { text-decoration: none; }
 a:hover, a:active { text-decoration: none; }
 
-/* top 버튼 */
+/* top ë²„íŠ¼ */
 
 html.scroll-top.scroll-apex .top-btn {
     opacity: 0;
@@ -669,7 +676,7 @@ html.scroll-top .top-btn-container {
     text-align: right;
 }
 
-/* 댓글 버튼 */
+/* ëŒ“ê¸€ ë²„íŠ¼ */
 /* .btn-color {
     display: inline-block;
     padding: 0 12px;
@@ -760,7 +767,7 @@ html.scroll-top .top-btn-container {
     border: none;
 }
 
-/* 수정/삭제 */
+/* ìˆ˜ì •/ì‚­ì œ */
 .comment-util {
     position: absolute;
     right: 0;
