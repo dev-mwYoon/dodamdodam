@@ -76,7 +76,7 @@ public class EventBoardQueryDslImpl implements EventBoardQueryDsl {
         EventBoard eventBoard = query.select(QEventBoard.eventBoard)
                 .from(QEventBoard.eventBoard)
                 .join(QEventBoard.eventBoard.member).fetchJoin()
-                .join(QEventBoard.eventBoard.eventFiles).fetchJoin()
+                .leftJoin(QEventBoard.eventBoard.eventFiles).fetchJoin()
                 .where(QEventBoard.eventBoard.id.eq(eventBoardId))
                 .fetchOne();
         return Optional.of(eventBoard);
