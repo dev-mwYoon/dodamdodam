@@ -2,7 +2,9 @@ package com.app.dodamdodam.controller.board.event;
 
 import com.app.dodamdodam.domain.EventBoardDTO;
 import com.app.dodamdodam.domain.EventReplyDTO;
+import com.app.dodamdodam.entity.event.EventBoard;
 import com.app.dodamdodam.entity.event.EventReply;
+import com.app.dodamdodam.entity.free.FreeBoard;
 import com.app.dodamdodam.search.EventBoardSearch;
 import com.app.dodamdodam.service.board.eventBoard.EventBoardService;
 import com.app.dodamdodam.service.board.eventBoard.eventReply.EventReplyService;
@@ -73,6 +75,7 @@ public class EventBoardController {
 
         log.info(daysBetween + " <- 남은 날짜@@@@@@@@@@@@@@@@@@@@@@@@@@");
         model.addAttribute("eventBoardDTO", eventBoardDTO);
+        model.addAttribute("d_day", endDays);
         return "event-board/event-board-detail";
     }
     /*이미 지난 이벤트 들어왔을때 모달 띄우고 나가기*/
@@ -135,6 +138,35 @@ public class EventBoardController {
 //            작성 페이지로
             return new RedirectView("/event/write");
         }
+    }
+
+    //    이벤트 게시글 수정 페이지
+    @GetMapping("update-board/{boardId}")
+    public String updateFreeBoard(@PathVariable(value = "boardId") Long boardId, Model model){
+        model.addAttribute("eventBoardDetail", eventBoardService.getDetail(boardId));
+        return "free-board/free-board-update";
+    }
+
+
+    //    이벤트 게시글 수정
+    @PostMapping("update-board/{boardId}")
+    public RedirectView updateFreeBoard(EventBoard updatedBoard, @PathVariable(value = "boardId") Long boardId){
+        log.info("수정 들어옴");
+        log.info(updatedBoard.toString());
+
+        /* 수정 해야함 화면 쪽에서 뭐 받는지 확인하고 추가 해야함 */
+        EventBoard updatedEventBoard = EventBoard.builder().boardTitle(updatedBoard.getBoardTitle()).boardContent(updatedBoard.getBoardContent())
+                .build();
+        eventBoardService.updateEventBoard(updatedEventBoard, boardId);
+        return new RedirectView("/event/detail/{boardId}");
+    }
+
+    //    이벤트 게시글 삭제
+    @GetMapping("delete-board/{boardId}")
+    public RedirectView deleteFreeBoard(@PathVariable(value = "boardId") Long boardId){
+        log.info("삭제 컨트롤러 들어옴");
+        eventBoardService.delete(boardId);
+        return new RedirectView("/event/list");
     }
 
 

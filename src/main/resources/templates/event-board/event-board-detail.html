@@ -17,13 +17,15 @@
        <div id="container">
               <!-- 모달창 -->
               <div class="like-modal-container event-like" id="like-modal">
-                <span class="like-text" style="display:none;">찜 목록에 추가했습니다</span>
-                <span class="like-cancel-text"style="display:none;">찜 목록에서 제외했습니다</span>
+                <span class="like-text" style="display:none;">이 이벤트를 좋아해요</span>
+                <span class="like-cancel-text"style="display:none;">좋아요를 취소했습니다</span>
+<!--                <span class="like-text" style="display:none;">찜 목록에 추가했습니다</span>-->
+<!--                <span class="like-cancel-text"style="display:none;">찜 목록에서 제외했습니다</span>-->
                </div>
         <div id="recruitment-container">
             <div class="container-form">
                 <div class="recruitment-title">
-                    <h3>2023 대한민국 채용박람회</h3>
+                    <h3 th:text="${eventBoardDTO.boardTitle}">제목</h3>
                 </div>
                 <div class="recruitment-info">
                     <div class="info-img">
@@ -35,7 +37,12 @@
                         </dl>
                         <dl>
                             <dt>이벤트 날짜</dt>
-                            <dd><span th:text="${eventBoardDTO.eventStartDate + ' ~ ' + eventBoardDTO.eventEndDate}"></span></dd>
+<!--                            <dd><span th:text="${eventBoardDTO.eventStartDate + ' ~ ' + eventBoardDTO.eventEndDate}"></span></dd>-->
+                            <dd>
+                                <span th:text="${#temporals.format(eventBoardDTO.eventStartDate, 'yyyy.MM.dd')}"></span>
+                                ~
+                                <span th:text="${#temporals.format(eventBoardDTO.eventEndDate, 'yyyy.MM.dd')}"></span>
+                            </dd>
                         </dl>
                         <dl>
                             <dt>이벤트 장소</dt>
@@ -53,23 +60,25 @@
                                 <span th:unless="${eventBoardDTO.eventBusinessEmail}" th:text="${eventBoardDTO.memberDTO.memberEmail}"></span>
                             </dd>
                         </dl>
-                        <div class="wish-button-box">
-                            <button type="button" class="wish-button"  aria-pressed="false">
+                        <dl>
+                            <div class="wish-button-box">
+                                <button type="button" class="wish-button"  aria-pressed="false">
                                 <span>
                                     <span class="wish-button-children">
                                         <img class="heart-icon" src ="/images/recruitment-board/non-heart-icon.png">
                                         <div>
                                             <!-- <svg viewBox="0 0 32 32" focusable="false" role="presentation" class="withIcon-icon" aria-hidden="true" style="width: 24px; height: 24px;"> -->
-                                                <!-- <path d="M22.16 4h-.007a8.142 8.142 0 0 0-6.145 2.79A8.198 8.198 0 0 0 9.76 3.998a7.36 7.36 0 0 0-7.359 7.446c0 5.116 4.64 9.276 11.6 15.596l2 1.76 2-1.76c6.96-6.32 11.6-10.48 11.6-15.6v-.08A7.36 7.36 0 0 0 22.241 4h-.085zm-5.28 21.84l-.88.8-.88-.8h-.08C8.4 19.76 4 15.84 4 11.44l-.001-.082A5.76 5.76 0 0 1 9.928 5.6a6.542 6.542 0 0 1 4.865 2.232l.486.567h1.52l.48-.56a6.548 6.548 0 0 1 4.877-2.24l.084-.001a5.76 5.76 0 0 1 5.76 5.76l-.001.085c0 4.396-4.4 8.316-11.12 14.396z"></path></svg> -->
+                                            <!-- <path d="M22.16 4h-.007a8.142 8.142 0 0 0-6.145 2.79A8.198 8.198 0 0 0 9.76 3.998a7.36 7.36 0 0 0-7.359 7.446c0 5.116 4.64 9.276 11.6 15.596l2 1.76 2-1.76c6.96-6.32 11.6-10.48 11.6-15.6v-.08A7.36 7.36 0 0 0 22.241 4h-.085zm-5.28 21.84l-.88.8-.88-.8h-.08C8.4 19.76 4 15.84 4 11.44l-.001-.082A5.76 5.76 0 0 1 9.928 5.6a6.542 6.542 0 0 1 4.865 2.232l.486.567h1.52l.48-.56a6.548 6.548 0 0 1 4.877-2.24l.084-.001a5.76 5.76 0 0 1 5.76 5.76l-.001.085c0 4.396-4.4 8.316-11.12 14.396z"></path></svg> -->
                                         </div>
                                     </span>
                                 </span>
-                            </button>
-<!--                            <p class="recruitment-status d-day">D-<strong th:text="${#dates.daysUntil(eventBoardDTO.eventEndDate)}"></strong></p>-->
-<!--                            <p class="recruitment-status d-day">D-<strong th:text="${#temporals.daysBetween(#temporals.createNow(), eventBoardDTO.eventEndDate)}"></strong></p>-->
-<!--                            <p class="recruitment-status d-day">D-<strong th:text="${#dates.daysUntil(T(java.time.LocalDate).parse(eventBoardDTO.eventEndDate))}"></strong></p>-->
-                            <p class="recruitment-status d-day">D-<strong th:text="${eventBoardDTO.eventEndDate}"></strong></p>
-                        </div>
+                                </button>
+                                <!--                            <p class="recruitment-status d-day">D-<strong th:text="${#dates.daysUntil(eventBoardDTO.eventEndDate)}"></strong></p>-->
+                                <!--                            <p class="recruitment-status d-day">D-<strong th:text="${#temporals.daysBetween(#temporals.createNow(), eventBoardDTO.eventEndDate)}"></strong></p>-->
+                                <!--                            <p class="recruitment-status d-day">D-<strong th:text="${#dates.daysUntil(T(java.time.LocalDate).parse(eventBoardDTO.eventEndDate))}"></strong></p>-->
+                                <p class="recruitment-status d-day">이벤트 종료까지 <strong th:text="${d_day}"></strong>일</p>
+                            </div>
+                        </dl>
                     </div>
                     <div class="sns-share">
                         <span>주변 분들과 함께 참가하고 싶으신가요? 페이지를 공유해보세요!</span>
@@ -104,12 +113,13 @@
                         <div th:each="fileDTO : ${fileDTOS}" th:if="${fileDTO != null}">
                             <img th:src="@{/file/display(fileName=${fileDTO.filePath}/${fileDTO.fileUuid}_${fileDTO.fileOriginalName})}">
                         </div>
+                        <div th:text="${eventBoardDTO.boardContent}"></div>
                 </div>
                 </div>
                 <div class="my-board">
-                    <button class="btn list"><a href="">목록</a></button>
-                    <button class="btn"><a href="">수정</a></button>
-                    <button class="btn delete"><a class="delete-a" href="">삭제</a></button>
+                    <button class="btn list" onclick="location.href='/event/list'"><a>목록</a></button>
+                    <button class="btn" th:attr="data-id=${eventBoardDTO.id}" onclick="location.href='/event/update-board/' + this.getAttribute('data-id')"><a>수정</a></button>
+                    <button class="btn delete" th:attr="data-id=${eventBoardDTO.id}" onclick="location.href='/event/delete-board/' + this.getAttribute('data-id')"><a class="delete-a">삭제</a></button>
                 </div>
 
                 <div class="board-detail-bottom-container">
@@ -218,7 +228,7 @@
 $(function(){
     $('.wish-button').click(function(e){
         if($('.wish-button').attr('aria-pressed') == 'false'){
-            $(".heart-icon").attr("src", "images/recruitment-board/heart-background.png");
+            $(".heart-icon").attr("src", "/images/recruitment-board/heart-background.png");
             $('.wish-button').attr('aria-pressed','true') //하트 색 채우기
             $('.like-cancel-text').hide(); //해제 문구
             $('#like-modal').fadeIn();
@@ -230,7 +240,7 @@ $(function(){
             $('#like-modal').delay(500).fadeOut(); //사라지기
         
         }else{
-            $(".heart-icon").attr("src", "images/recruitment-board/non-heart-icon.png");
+            $(".heart-icon").attr("src", "/images/recruitment-board/non-heart-icon.png");
             $('.wish-button').attr('aria-pressed','false') //색 비우기
             $('.like-text').hide();  //찜 추가 문구
             // $('#like-modal').css({right: '-30%'}); //오->왼 슬라이드 등장

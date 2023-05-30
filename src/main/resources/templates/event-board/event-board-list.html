@@ -297,10 +297,10 @@
                         `;
             if (result[i].eventFileDTOS.length != 0) {
                 text += `
-                            <img class="thumbnail" src="${filePath}">
+                         <img class="thumbnail" src="${filePath}">
                         `;
             } else {
-                text += `<img src="/images/free-board/basic-image.png">`;
+                text += `<img style="border: 1px solid #00000012;" class="thumbnail" src="/images/free-board/basic-image.png">`;
             }
             text += `
                         <a href="/event/detail/${result[i].id}" style="text-decoration: none">

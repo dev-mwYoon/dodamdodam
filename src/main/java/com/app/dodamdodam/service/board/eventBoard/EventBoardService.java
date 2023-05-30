@@ -5,6 +5,7 @@ import com.app.dodamdodam.domain.EventFileDTO;
 import com.app.dodamdodam.domain.MemberDTO;
 import com.app.dodamdodam.entity.event.EventBoard;
 import com.app.dodamdodam.entity.event.EventFile;
+import com.app.dodamdodam.entity.free.FreeBoard;
 import com.app.dodamdodam.entity.member.Member;
 import com.app.dodamdodam.search.EventBoardSearch;
 import com.app.dodamdodam.search.board.AdminEventBoardSearch;
@@ -33,6 +34,10 @@ public interface EventBoardService {
 
     // 수정
     public void update(EventBoardDTO eventBoardDTO);
+
+    /* 이벤트 게시글 수정 */
+    public void updateEventBoard(EventBoard updateBoard, Long boardId);
+
     // 삭제
     public void delete(Long eventBoardId);
 
