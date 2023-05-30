@@ -16,7 +16,7 @@ import java.util.*;
 @RequiredArgsConstructor
 public class FileRestController {
 
-    private static final String ABSOLUTE_PATH = "C:/upload";
+    private static final String ABSOLUTE_PATH = "/C:/upload/";
 
     //    파일 업로드
     @PostMapping("upload")
@@ -42,7 +42,7 @@ public class FileRestController {
             /* 해당 파일이 이미지인 경우 썸네일도 저장 */
             if (multipartFiles.get(i).getContentType().startsWith("image")) {
                 FileOutputStream out = new FileOutputStream(new File(path, "t_" + uuids.get(i) + "_" + multipartFiles.get(i).getOriginalFilename()));
-                InputStream inputStream = new FileInputStream("C:\\upload\\" + getPath() + "\\" + uuids.get(i)+ "_" + multipartFiles.get(i).getOriginalFilename());
+                InputStream inputStream = new FileInputStream("/C:\\upload\\" + getPath() + "\\" + uuids.get(i)+ "_" + multipartFiles.get(i).getOriginalFilename());
                 Thumbnailator.createThumbnail(inputStream, out, 300, 300);
                 out.close();
                 filePath = "t_" + uuids.get(i) + "_" + multipartFiles.get(i).getOriginalFilename();
@@ -64,7 +64,7 @@ public class FileRestController {
     //    파일 불러오기
     @GetMapping("display")
     public byte[] Display(String fileName) throws Exception {
-        return fileName.contentEquals("null") || fileName.isBlank() ? null : FileCopyUtils.copyToByteArray(new File("C:/upload", fileName));
+        return fileName.contentEquals("null") || fileName.isBlank() ? null : FileCopyUtils.copyToByteArray(new File("/C:/upload", fileName));
     }
 
     //    현재 날짜 경로 구하기

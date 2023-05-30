@@ -172,6 +172,8 @@ document.getElementById("btnAtt").addEventListener("change", function (e) {
                     file.fileUuid = result.uuids[i];
                     file.fileOriginalName = result.fileOriginalNames[i];
 
+                    console.log(file);
+
                     fileArray.push(file);
                 }
             }

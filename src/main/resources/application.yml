@@ -6,8 +6,8 @@ server:
 spring:
   datasource:
     driver-class-name: oracle.jdbc.OracleDriver
-    url: jdbc:oracle:thin:@localhost:1521:XE
-#    url: jdbc:oracle:thin:@18.208.113.216:1521:XE
+#    url: jdbc:oracle:thin:@localhost:1521:XE
+    url: jdbc:oracle:thin:@18.208.113.216:1521:XE
     username: hr
     password: hr
 
@@ -47,7 +47,8 @@ spring:
       maxFileSize: 10MB
       maxRequestSize: 20MB
 
-      location: c:\\upload
+#      location: c:\\upload
+      location: /C:/upload/
       enabled: true
 
     #mail
@@ -74,7 +75,7 @@ spring:
             client-name: Naver
             client-id: LwN2FiWbr8qTUjRYPyjI
             client-secret: tQQOlIUsof
-            redirect-uri: http://localhost:10000/login/oauth2/code/naver
+            redirect-uri: http://dodam-dodam.site/login/oauth2/code/naver
             authorization-grant-type: authorization_code
             scope: name,email,mobile
 
@@ -83,7 +84,7 @@ spring:
             client_name: kakao
             client-id: ef0f0e2124248605af3acf60b98886d2
             client-secret: 03wP4xJHpwKXPzBm6EaiKKDJc2lfCusP
-            redirect-uri: http://localhost:10000/login/oauth2/code/kakao
+            redirect-uri: http://dodam-dodam.site/login/oauth2/code/kakao
             client-authentication-method: POST
             authorization-grant-type: authorization_code
             scope: account_email
