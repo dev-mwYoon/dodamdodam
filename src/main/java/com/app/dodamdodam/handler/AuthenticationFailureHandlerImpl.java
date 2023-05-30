@@ -20,7 +20,6 @@ public class AuthenticationFailureHandlerImpl implements AuthenticationFailureHa
         log.info("SecurityFilterChain start");
         log.error("exception message: {}", exception.getMessage());
         log.error("exception message: {}", exception.getMessage(), exception);
-        log.error("exception message: {}", exception.getStackTrace());
         response.sendRedirect(REDIRECT_URL);
     }
 }
