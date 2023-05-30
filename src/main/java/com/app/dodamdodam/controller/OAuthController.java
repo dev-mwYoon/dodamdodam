@@ -27,20 +27,32 @@ public class OAuthController {
     @GetMapping("/")
     public RedirectView oAuthLogin(HttpSession session, RedirectAttributes redirectAttributes){
         log.info(" ------------------- 로그인 처리 후 맨 마지막 컨트롤러 ------------------------------------- ");
-        MemberDTO memberDTO = (MemberDTO)session.getAttribute("member");
-        Long memberId = (Long) session.getAttribute("memberId");
         log.info("==================================================");
-        log.info(memberDTO + "");
-        log.info(memberId + "");
-        if (memberDTO.getMemberId() == null) {
-            redirectAttributes.addFlashAttribute("member", memberDTO);
-            return new RedirectView("/member/join");
+
+        if (session.getAttribute("member") != null) {
+            MemberDTO memberDTO = (MemberDTO)session.getAttribute("member");
+            log.info(memberDTO + "");
+            if (memberDTO.getMemberId() == null) {
+                redirectAttributes.addFlashAttribute("member", memberDTO);
+                return new RedirectView("/member/join");
+            }
         }
-        MemberDTO memberInfo = memberService.getMemberInfo(memberId);
-        if (memberInfo.getMemberRole() == Role.ADMIN){
-            return new RedirectView("/admins/home");
-        } else {
-            return new RedirectView("/home");
+
+        if (session.getAttribute("memberId") != null){
+            Long memberId = (Long) session.getAttribute("memberId");
+            log.info(memberId + "");
+
+            MemberDTO memberInfo = memberService.getMemberInfo(memberId);
+
+            if (memberInfo.getMemberRole() == Role.ADMIN){
+                return new RedirectView("/admins/home");
+            } else {
+                return new RedirectView("/home");
+            }
         }
+
+        return new RedirectView("/home");
+
     }
+
 }

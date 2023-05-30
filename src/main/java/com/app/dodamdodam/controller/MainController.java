@@ -15,11 +15,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.view.RedirectView;
 
 import javax.servlet.http.HttpSession;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("")
 @RequiredArgsConstructor
 @Slf4j
 public class MainController {
@@ -30,9 +31,14 @@ public class MainController {
     private final PurchaseBoardService purchaseBoardService;
     private final RecruitmentBoardService recruitmentBoardService;
 
+    @GetMapping("")
+    public RedirectView goToMain(){
+        return new RedirectView("/home");
+    }
+
     /*=========================== 발표 버전 메인 ========================================*/
 
-    @GetMapping("home")
+    @GetMapping("/home")
     public String main(HttpSession session, Model model){
         log.info("==================== main controller =====================");
 //        log.info(session.getAttribute("member") + "");
@@ -71,12 +77,12 @@ public class MainController {
 
 
 
-    @GetMapping("introduce")
+    @GetMapping("/introduce")
     public String introduce(){
         return "introduce/introduce";
     }
 
-    @GetMapping("helpcenter")
+    @GetMapping("/helpcenter")
     public String helpcenter(){
         return "helpcenter/inquiry-home";
     }

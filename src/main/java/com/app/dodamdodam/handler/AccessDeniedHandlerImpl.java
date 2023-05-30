@@ -14,7 +14,7 @@ import java.io.IOException;
 @Slf4j
 public class AccessDeniedHandlerImpl implements AccessDeniedHandler {
 
-    private static final String REDIRECT_URL = "/error/error403.html";
+    private static final String REDIRECT_URL = "/error/403.html";
 
     @Override
     public void handle(HttpServletRequest request, HttpServletResponse response, AccessDeniedException accessDeniedException) throws IOException, ServletException {
