@@ -49,7 +49,7 @@ public class EventBoard extends Board {
      private String eventBusinessEmail;
 
     /* 댓글 */
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "eventBoard")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "eventBoard", cascade = CascadeType.REMOVE)
     private List<EventReply> eventReplies = new ArrayList<>();;
 
     /* 파일 */
@@ -57,7 +57,7 @@ public class EventBoard extends Board {
     private List<EventFile> eventFiles = new ArrayList<>();
 
 // 작성한 유저
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "MEMBER_ID")
     private Member member;
 
